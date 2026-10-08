@@ -14,8 +14,6 @@ export const company = {
   vat: "VAT Number: GB480 0588 46",
   number: "Company Number: 4725870",
   address: ["Unit 2, Cherry Orchard Nursery,", "Trenches Lane,", "Slough, SL3 6DH"],
-  // The registered office (SL3 6DH) from postcodes.io: 51.514185, -0.54023.
-  coords: "51.5142°N 0.5402°W",
   copyright: "© 2025 CSC Screeding. All rights reserved.",
   tagline: "Programme certainty for commercial fit-outs and residential developments. Delivered by the Maverick mobile batching solution.",
 };
@@ -202,6 +200,7 @@ export const contact = {
     { label: "Commercial Projects", href: `${SITE}/commercial-fit-out` },
     { label: "Residential Projects", href: `${SITE}/residential` },
   ],
+  image: { src: "/media/maverick-truck.webp", alt: "A CSC operative beside the blue Maverick screed truck" },
   coverage: { title: "South-East Coverage", text: "Mobile service across the region", note: "Fast response times" },
   whyTitle: "Why Choose CSC Screeding?",
   why: ["Programme certainty protecting your fit-out timeline", "Mobile batching eliminates transport delays", "Specialist fit-out screeding expertise", "Fast-track commercial project experience"],

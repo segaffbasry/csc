@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui";
 import { insights } from "@/lib/content";
 
-/* "Latest Articles": the three posts on the live homepage as siteassist-style cards (8px radius photo, mono meta
+/* "Latest Articles": the three posts on the live homepage as siteassist-style cards (8px radius photo, small meta
    line, title, two-line summary). Each opens the post on cscscreeding.co.uk. */
 export function Insights() {
   return (

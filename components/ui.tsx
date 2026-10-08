@@ -28,9 +28,8 @@ export function Icon({ name, className }: { name: IconName; className?: string }
 
 const external = (href: string) => !href.startsWith("#") && !href.startsWith("tel:") && !href.startsWith("mailto:");
 
-/* siteassist.com's .button, measured from its stylesheet: Geist Mono 500, uppercase, letter-spacing .04em,
-   line-height 1.5, padding .75em 1.5em, radius .25em, `transition: all .2s cubic-bezier(.215,.61,.355,1)`.
-   Variants follow its own: primary (violet, hover #8133fe, here Royal to Royal Light), neutral (neutral-300, hover
+/* Buttons in the live site's type (Inter 500, sentence case, radius 6px; client feedback, 8 Oct) with siteassist's
+   states and `transition: all .2s cubic-bezier(.215,.61,.355,1)`. Variants follow siteassist's own: primary (violet, hover #8133fe, here Royal to Royal Light), neutral (neutral-300, hover
    neutral-200 with neutral-700 text), line (transparent with a 1px bottom border, hover to neutral-600) and a
    white variant for the film. Outbound links open in a new tab. */
 export function Button({ href, children, variant = "primary", icon, className }: {

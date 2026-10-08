@@ -9,8 +9,8 @@ import { company, hero } from "@/lib/content";
 import { splitWords } from "@/lib/split";
 
 /* siteassist's hero, restaged with CSC's own film: full-bleed footage (the Kingston Cemfloor C25 pour, cut from
-   CSC's "Maverick in Action" film), a mono uppercase headline over a hairline rule, the line of copy and the
-   registered office's coordinates under it, and the client logos along the foot.
+   CSC's "Maverick in Action" film), the headline in Inter over a hairline rule, the line of copy under it, and the
+   client logos along the foot.
    Entrance waits for intro:done: the film settles from 1.08 scale, the headline words rise out of their masks, the
    rule draws, the copy, buttons and logos follow. The film is muted, has a pause control, pauses off-screen and
    falls back to its local poster. */
@@ -75,7 +75,6 @@ export function Hero() {
           <span className="hero-rule" aria-hidden="true" />
           <div className="hero-row">
             <p className="hero-text" data-hero-in>{hero.text}</p>
-            <p className="hero-coords" data-hero-in><span className="hero-blink" aria-hidden="true" />{company.coords}</p>
           </div>
           <div className="hero-actions" data-hero-in>
             <Button href={hero.primary.href}>{hero.primary.label}</Button>

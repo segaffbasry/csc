@@ -6,7 +6,7 @@ import { projects } from "@/lib/content";
      .solutions-link        border-bottom 1px neutral-900, padding 1.75em 0 1.5em; :hover border-bottom-color violet
      .solutions-item:hover  color violet (here Royal), z-index 2
      .solutions-row         grid 3em 1fr, gap 1em, items centred
-     .solutions-heading     Geist Mono, uppercase
+     .solutions-heading     Geist Mono, uppercase (set here in Inter 600, sentence case: client feedback, 8 Oct)
      .solutions-img         12em wide, aspect-ratio 2 / 2.5, radius .25em, absolute at inset calc(50% - 7em) 0 auto
                             auto, transform scale(0), transition transform 0s cubic-bezier(.625,.05,0,1),
                             pointer-events none

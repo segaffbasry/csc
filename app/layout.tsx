@@ -25,7 +25,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <script dangerouslySetInnerHTML={{ __html: boot }} />
         <script dangerouslySetInnerHTML={{ __html: posthogSnippet }} />
         <link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossOrigin="" />
-        <link rel="preload" href="/fonts/geist-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossOrigin="" />
         <link rel="preload" href="/media/pour-poster.jpg" as="image" />
         <noscript><style>{".preloader{display:none!important}"}</style></noscript>
       </head>

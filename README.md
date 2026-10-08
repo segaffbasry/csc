@@ -47,8 +47,8 @@ cscscreeding.co.uk is a GoHighLevel (LeadConnector) funnel page. Its section mar
 | 9 | Featured Projects | 6 | Projects, 6 of 6 |
 | 10 | Proven Performance | 2 stats | Merged into the Certainty stat notes |
 | 11 | Latest Articles | 3 | Insights, 3 of 3 |
-| 12 | Ready to Guarantee Your Programme? CTA | 1 | Footer panel |
-| 13 | Get a quote / Get in Touch / Why Choose (4) / two GHL form iframes | 4 reasons | Footer panel (the forms link to the live quote pages) |
+| 12 | Ready to Guarantee Your Programme? CTA | 1 | Contact (its own section) |
+| 13 | Get a quote / Get in Touch / Why Choose (4) / two GHL form iframes | 4 reasons | Contact (the forms link to the live quote pages) |
 | 14 | Footer: 3 link groups (15 links), company details | 15 | Footer, 14 (see Decisions) |
 
 Hidden on the live page and left out: the "Proof-Based Results" block (4 Unsplash stock projects, `display:none`) and "They Ask, You Answer" (3 downloads, hidden).
@@ -72,7 +72,7 @@ It labels every connected shape and traces each one with potrace. That gives 14 
 - **Meet the Maverick** (v8h5CIaImbg). Burned-in captions, so it is not suitable as a background. It is self-hosted at 720p (17MB) as the Maverick section's on-page film, with sound and controls, and loads only when played.
 - **Maverick in Action** (fC7vms9BlLA). Its second half is caption-free pour footage. `scripts/film.sh` cuts five 4s shots from it (2:29 onwards) into a 20s, 2.1MB silent hero loop.
 
-**Fonts.** Inter (the live site's face) for body and headings. Geist Mono (siteassist's face) for the hero headline, buttons, labels, figures and quotes. Both are open source and self-hosted from `public/fonts` (fontsource woff2).
+**Fonts.** Inter only, the live site's face, in sentence case throughout, self-hosted from `public/fonts` (fontsource woff2). The first build set the hero, header, menu, buttons and labels in Geist Mono uppercase (siteassist's face); client feedback on 8 Oct called that "too AI" and asked to match CSC's own type. The live computed styles now drive it: nav 13px / 600, buttons 16px / 500 with a 6px radius, headings bold.
 
 ### Palette
 
@@ -100,7 +100,8 @@ The live site's orange and template blues are not used. The palette was decided 
 5. **Projects.** Six rows with the copied hover.
 6. **Testimonials.**
 7. **Insights.**
-8. **Contact and footer panel.**
+8. **Contact.** Its own section: the Maverick truck photo, the call, the quote routes, the direct line, email, coverage and Why Choose.
+9. **Footer.** The inset panel, with links and company details only.
 
 The first sections lead with real imagery: the hero film, the fleet and team aerial in Certainty, and the commercial and residential photos in Services.
 
@@ -110,11 +111,11 @@ Measured on the production build:
 
 | Width | Height | Viewports |
 | --- | --- | --- |
-| 1440 × 900 | 7,255px | 8.06 |
-| 768 × 1024 | 10,517px | 10.3 |
-| 375 × 812 | 11,159px | 13.7 |
+| 1440 × 900 | 7,480px | 8.31 |
+| 768 × 1024 | 11,271px | 11.0 |
+| 375 × 812 | 11,575px | 14.3 |
 
-Desktop sits at the top of the 6 to 8 target. It was 9.1 on the first pass and was brought down by:
+Desktop is just over the 6 to 8 target since the separate Contact section (8.06 before). It was 9.1 on the first pass and was brought down by:
 
 - merging duplicate sections (Screeding Expertise, Proven Performance, the repeated counters);
 - clamping project summaries to one line;
@@ -196,7 +197,7 @@ The CSC logo is two swooshes sweeping round two words, so it is built the way th
 2. "CSC" rises letter by letter.
 3. "screeding" follows a beat later.
 
-A mono counter (000 to 100) and a hairline bar fill underneath so the wait reads clearly. Earlier clients missed a subtle loader.
+A counter (000 to 100, tabular figures) and a hairline bar fill underneath so the wait reads clearly. Earlier clients missed a subtle loader.
 
 One timeline, 2.4s:
 
@@ -253,8 +254,9 @@ One timeline, 2.4s:
   - "Proven Performance" repeats two counters, so its copy became the notes under those counters.
   - The counters appeared twice on the live page and appear once here.
 - **Maverick section.** It carries the Lidl fit-out from the live Maverick page (3 weeks against 1, 66% time saved, Zero delays) as the page's signature figure. It is the one contained Ink card, so the page background never changes after the hero (client feedback on earlier demos: no colour jumps).
-- **Hero headline** is the live H3. "CSC Screeding" (the live H1) is kept for screen readers and carried by the logo.
-- **Coordinates.** The hero readout is the registered office, SL3 6DH (postcodes.io: 51.514185, -0.54023).
+- **Hero headline** is the live H3, in Inter 600 sentence case. "CSC Screeding" (the live H1) is kept for screen readers and carried by the logo.
+- **No coordinate readout.** siteassist's hero has one; the first build showed the registered office's coordinates, and the client found it random (8 Oct), so it was removed.
+- **Contact is its own section** (client feedback, 8 Oct). The footer panel now holds only the logo, the link groups and the company details. The extra section costs about a quarter of a viewport, which takes desktop to 8.3.
 - **Client logos.** Turned into single-colour marks (`scripts/media.py`), white on the film. Curo's file is light lettering in a black box, so the box is treated as background.
 - **Footer.**
   - The live "Certainty Kits" link has no page and the second "Technical Specifications" duplicates the first, so both are left out (14 of 15).
@@ -281,7 +283,7 @@ All from CSC's own sources, downloaded on 7 Oct 2026:
 ```
 app/              layout (noindex, PostHog, boot script, fonts), page (section order), globals.css (tokens), icon.svg
 components/       Preloader, Header (+ Menu), Footer, Logo, Motion (Lenis, reveals, link guard), ui (Button, Icon)
-components/home/  Hero, Marquee, Certainty, Services, Maverick (film + Lidl figure + operations), Projects (copied hover), Testimonials, Insights
+components/home/  Hero, Marquee, Certainty, Services, Maverick (film + Lidl figure + operations), Projects (copied hover), Testimonials, Insights, Contact
 lib/              content.ts (all copy and links), logo.ts (generated), posthog.ts, scroll.ts, split.ts
 styles/           chrome.css (logo, preloader, header, menu, footer), home.css (sections)
 scripts/          logo.py, media.py, film.sh, check-links.mjs

@@ -7,18 +7,6 @@
   font-weight: 100 900;
   font-display: swap;
 }
-@font-face {
-  font-family: "Geist Mono";
-  src: url("/fonts/geist-mono-latin-400-normal.woff2") format("woff2");
-  font-weight: 400;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Geist Mono";
-  src: url("/fonts/geist-mono-latin-500-normal.woff2") format("woff2");
-  font-weight: 500;
-  font-display: swap;
-}
 
 :root {
   /* Palette. Royal and Concrete are the logo's two inks (median of the traced pixels: #100E9F and #9A989B).
@@ -44,17 +32,17 @@
   --ease-btn: cubic-bezier(0.215, 0.61, 0.355, 1);  /* .button { transition: all .2s cubic-bezier(.215,.61,.355,1) } */
   --preview-in: 600ms;                               /* .solutions-item:hover .solutions-img { transition-duration: 600ms } */
 
-  /* Type. Body and headings: Inter, the live site's only face. Display: Geist Mono, siteassist's hero, button and
-     label face (hero H1: 44.37px at a 1024px viewport, letter-spacing -2.77px = -0.0625em, uppercase). */
+  /* Type: Inter only, in sentence case, as on the live site (client feedback, 8 Oct: the mono uppercase read as
+     "too AI"). Live computed styles: nav 13px / 600; buttons 16px / 500, padding 8px 24px, radius 6px; H1 700;
+     section headings 48px / 700. */
   --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --mono: "Geist Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
   --fs-hero: clamp(28px, 4.2vw, 60px);
   --fs-h2: clamp(30px, 3.4vw, 50px);   /* siteassist h2: Geist 400, line-height 1, letter-spacing -0.045em */
   --fs-lead: clamp(19px, 1.9vw, 28px); /* siteassist statement: 35.56px / 39.11px, -0.031em at 1024 */
   --fs-h3: clamp(18px, 1.45vw, 21px);
   --fs-body: 16px;
   --fs-small: 14px;
-  --fs-mono: 13px;                     /* siteassist .button.primary-small: .875em */
+  --fs-btn: 15px;                      /* the live buttons: 16px / 500 */
 
   /* Spacing scale (brief: 64 to 96px desktop, 48 to 64px mobile; house rule: about 80px max). siteassist's
      .section uses 85.33px at 1024. */
@@ -65,6 +53,7 @@
   --wrap: 1360px;
   --radius-s: 0.25em; /* siteassist --radius--small */
   --radius: 8px;      /* --radius--medium .5em */
+  --radius-btn: 6px;  /* the live buttons */
   --radius-l: 12px;   /* --radius--large .75em */
   --header-h: 80px;
 }
@@ -100,7 +89,7 @@ html.lenis, html.lenis body { height: auto; }
 [data-tone="dark"] :focus-visible, .menu :focus-visible, .preloader :focus-visible { outline-color: var(--white); }
 
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
-.skip { position: fixed; left: 16px; top: 16px; z-index: 200; padding: 10px 14px; background: var(--royal); color: var(--white); font-family: var(--mono); font-size: var(--fs-mono); text-transform: uppercase; border-radius: var(--radius-s); transform: translateY(-200%); }
+.skip { position: fixed; left: 16px; top: 16px; z-index: 200; padding: 10px 14px; background: var(--royal); color: var(--white); font-size: var(--fs-small); font-weight: 600; border-radius: var(--radius-btn); transform: translateY(-200%); }
 .skip:focus { transform: none; }
 
 .wrap { width: 100%; max-width: calc(var(--wrap) + 2 * var(--gutter)); margin-inline: auto; padding-inline: var(--gutter); }
@@ -109,16 +98,18 @@ html.lenis, html.lenis body { height: auto; }
 .band { background: var(--c200); }
 
 /* ---------- type ---------- */
-.h2 { font-size: var(--fs-h2); font-weight: 500; line-height: 1.04; letter-spacing: -0.04em; text-wrap: balance; max-width: 18ch; }
+.h2 { font-size: var(--fs-h2); font-weight: 600; line-height: 1.06; letter-spacing: -0.035em; text-wrap: balance; max-width: 18ch; }
 .h3 { font-size: var(--fs-h3); font-weight: 600; line-height: 1.25; letter-spacing: -0.015em; }
 .lead { font-size: var(--fs-lead); line-height: 1.3; letter-spacing: -0.025em; max-width: 34ch; }
 .section-text { color: var(--muted); max-width: 58ch; }
 
-/* ---------- buttons (siteassist .button, see components/ui.tsx) ---------- */
+/* ---------- buttons (see components/ui.tsx) ---------- */
+/* Type and shape from the live site's buttons (Inter 500, sentence case, padding 8px 24px, radius 6px), sized up to
+   44px tall for touch; colour states and the transition from siteassist's .button. */
 .btn {
-  display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; flex: none;
-  padding: 0.75em 1.5em; border-radius: var(--radius-s);
-  font-family: var(--mono); font-weight: 500; font-size: var(--fs-mono); line-height: 1.5; letter-spacing: 0.04em; text-transform: uppercase;
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.55rem; flex: none;
+  min-height: 44px; padding: 10px 22px; border-radius: var(--radius-btn);
+  font-weight: 500; font-size: var(--fs-btn); line-height: 1.5; letter-spacing: -0.005em;
   transition: all 0.2s var(--ease-btn);
 }
 .btn .icon { width: 15px; height: 15px; flex: none; }
@@ -128,7 +119,7 @@ html.lenis, html.lenis body { height: auto; }
 .btn-neutral:hover { background: var(--c200); color: var(--muted); }
 .btn-white { background: var(--white); color: var(--ink); }
 .btn-white:hover { background: var(--c300); }
-.btn-line { padding: 0.5em 0; border-radius: 0; border-bottom: 1px solid var(--ink); color: var(--ink); }
+.btn-line { min-height: 0; padding: 0.4em 0; border-radius: 0; border-bottom: 1px solid var(--ink); color: var(--ink); }
 .btn-line:hover { color: var(--muted); border-bottom-color: var(--concrete); }
 
 .icon { width: 20px; height: 20px; display: block; }

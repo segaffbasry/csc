@@ -23,6 +23,7 @@ PHOTOS = {
     "commercial": ("replit_George Liquid Screed - JPL_1749572145663-XTNJNR2O.jpg", 1290, None),
     "residential": ("replit_WhatsApp_Image_2026-02-10_at_13.30.01_1770730408107-CG3VCr6y.jpeg", 1600, None),
     "spencer": ("replit_Spencer home page website-B6o_rSY1.jpg", 1600, None),
+    "maverick-truck": ("replit_IMG_9602-CoJEPuU3.jpg", 1290, None),
     "controls": ("replit_Photo 24-02-2025_ 12 19 18-DbgiHHQO.jpg", 1800, None),
     "arundel": ("replit_Arundel great court-C1o8XB2a.jpeg", 1290, None),
     "project-twickenham": ("gcs_686e1d15038ba87c3a400297.jpeg", 1366, None),
